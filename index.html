@@ -23,11 +23,11 @@
         var k=1;
         var ball=[];
         var ballCount=4;
-        var dx=2+temps;
-        var dy=-2+temps;
+        // var dx=2+temps;
+        // var dy=-2+temps;
         for(var i=0;i<ballCount;i++){
-            ball[i]={x:0,y:0,dx:2,dy:-2,color:"rgba("+Math.ceil(Math.random()*256)+","+Math.ceil(Math.random()*256)+","+Math.ceil(Math.random()*256)+","+Math.ceil(Math.random()*256)+")"}
-            
+            ball[i]={x:0,y:0,dx:2+temps,dy:-2+temps,color:"rgba("+Math.ceil(Math.random()*256)+","+Math.ceil(Math.random()*256)+","+Math.ceil(Math.random()*256)+","+Math.ceil(Math.random()*256)+")"}
+
         }
         var ballRadius=20;
         var canvas;
@@ -49,7 +49,7 @@
         }
 
         function draw(){
-            ////console.log(canvas.width,canvas.height);
+            //console.log(canvas.width,canvas.height);
             ctx.clearRect(0,0,canvas.width,canvas.height);
             for(var i=0;i<ballCount;i++){
 
@@ -57,22 +57,20 @@
 
                     ball[i].x=400;
                     ball[i].y=50;
-
                 }
                 ctx.beginPath();
-                if(ball[i].x>530||ball[i].x<20||ball[i].y>380||ball[i].y<20){
-                    console.log("yes");
-                }
+                // if(ball[i].x>530||ball[i].x<20||ball[i].y>380||ball[i].y<20){
+                //     console.log("yes");
+                // }
                 ctx.arc(ball[i].x,ball[i].y,ballRadius,0,Math.PI*2);
                 ctx.fillStyle=ball[i].color;
                 ctx.fill();
                 ctx.closePath();
-
             }
-            //console.log(ball[0].x,ball[0].y)
-            //console.log(temp);
+            console.log(ball[0].x,ball[0].y)
+            console.log(temp);
             speed(temp);
-            //console.log(ball[0].dx,ball[0].dy)
+            console.log(ball[0].dx,ball[0].dy)
             //rebound();
             move();
             rebound();
@@ -85,13 +83,13 @@
                 for(var i=0;i<ballCount;i++){
                 ball[i].x=ball[i].x;
                 ball[i].y=ball[i].y;
-                } 
+                }
             }
             else
             {
                for(var i=0;i<ballCount;i++){
-                ball[i].x=ball[i].x+ball[i].dx//+Math.random();
-                ball[i].y=ball[i].y+ball[i].dy//+Math.random();
+                ball[i].x=ball[i].x+ball[i].dx+Math.random();
+                ball[i].y=ball[i].y+ball[i].dy+Math.random();
                 k=0;}
             }
 
