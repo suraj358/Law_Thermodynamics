@@ -143,20 +143,20 @@
 
         function simstate() {
             if (k===1){
-                document.getElementById('playpausebutton').src="sins/bluepausedull.png";
+                document.getElementById('playpausebutton').src="sins/blueplaydull.png";
                 k=0;
-                $('#l1spinner').spinner("disable");
-                $('#l1slider').slider("disable");
+                $('#l1spinner').spinner("enable");
+                $('#l1slider').slider("enable");
                 if (temp===0)
                 {
                     document.getElementById("p6").innerHTML="Entropy of the system, S=0";
                 }
             }
             else {
-                document.getElementById('playpausebutton').src="sins/blueplaydull.png";
+                document.getElementById('playpausebutton').src="sins/bluepausedull.png";
                 flag=true;
-                $('#l1spinner').spinner("enable");
-                $('#l1slider').slider("enable");
+                $('#l1spinner').spinner("disable");
+                $('#l1slider').slider("disable");
                 document.getElementById("p6").innerHTML="";
             }
         }
@@ -278,7 +278,7 @@
     <div id="ctrltitle">CONTROLS</div>
     <!-- Region for User controls of simulation -->
     <div id="controls">
-        <img id="playpausebutton" onclick="simstate()" src="sins/blueplaydull.png" />
+        <img id="playpausebutton" onclick="simstate();" src="sins/blueplaydull.png" />
         <img id="rotationbutton" onclick="location.reload();" src="sins/bluecwdull.png" />
     </div>
     <!-- DND-Copyright display-->
